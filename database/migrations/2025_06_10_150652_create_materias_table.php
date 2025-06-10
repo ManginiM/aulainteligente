@@ -15,12 +15,14 @@ class CreateMateriasTable extends Migration
 {
     Schema::create('materias', function (Blueprint $table) {
         $table->id();
-        $table->string('nombre'); // Ejemplo: "Álgebra"
+        $table->string('nombre');
+        $table->string('profesor')->nullable();
         $table->foreignId('aula_id')->constrained()->onDelete('cascade');
         $table->foreignId('curso_id')->constrained()->onDelete('cascade');
         $table->timestamps();
     });
 }
+
 
 
     /**
