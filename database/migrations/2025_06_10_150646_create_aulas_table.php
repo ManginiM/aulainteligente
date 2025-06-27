@@ -16,16 +16,10 @@ class CreateAulasTable extends Migration
     Schema::create('aulas', function (Blueprint $table) {
         $table->id();
         $table->string('nombre');
-        $table->integer('capacidad')->nullable();
-        $table->float('temperatura')->nullable();
-        $table->enum('posicion_cortinas', ['extendidas', 'media_altura', 'guardadas'])->default('guardadas');
-        $table->integer('stock_roto')->nullable();
-        $table->integer('mesas_disponibles')->nullable();
-        $table->integer('sillas_disponibles')->nullable();
-        $table->float('intensidad_luz')->nullable();
-        $table->enum('estado_proyector', ['funciona', 'mantenimiento', 'fuera_servicio', 'sin_hdmi'])->default('funciona');
+        $table->string('ubicacion');
+        $table->integer('capacidad');
         $table->timestamps();
-    });
+    });    
 }
 
 

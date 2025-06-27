@@ -19,11 +19,37 @@ class Aula extends Model
         'estado_proyector',
     ];
     
-    // Un Aula puede ser reservada por muchas Materias
-    public function materias()
-    {
-        return $this->hasMany(Materia::class);
+    
+    public function disponibilidad()
+    {   
+        return $this->hasOne(Disponibilidad::class);
     }
+
+    public function cortina()
+    {
+        return $this->hasOne(Cortina::class);
+    }
+
+    public function mueble()
+    {   
+        return $this->hasOne(Mueble::class);
+    }
+
+    public function aireAcondicionado()
+    {
+        return $this->hasOne(AireAcondicionado::class);
+    }
+
+    public function focos()
+    {
+        return $this->hasMany(Foco::class);
+    }
+
+    public function reservas()
+    {
+        return $this->hasMany(Reserva::class);
+    }
+
     use HasFactory;
 
 }

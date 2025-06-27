@@ -15,16 +15,15 @@ class Materia extends Model
     ];
     
 
-    // Materia "reserva" un Aula
-    public function aula()
+    public function docente()
     {
-        return $this->belongsTo(Aula::class);
+        return $this->belongsTo(Docente::class);
     }
 
-    // Materia pertenece a un Curso
-    public function curso()
+    public function horarios()
     {
-        return $this->belongsTo(Curso::class);
+        return $this->hasMany(Horario::class);
     }
+
     use HasFactory;
 }
