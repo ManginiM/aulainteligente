@@ -13,7 +13,7 @@ class CreateFocosTabla extends Migration
      */
     public function up()
     {
-        Schema::create('focos', function (Blueprint $table) {
+        Schema::create('foco', function (Blueprint $table) {
             $table->id();
             $table->string('tipo');
             $table->string('intensidad');

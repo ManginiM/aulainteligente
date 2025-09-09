@@ -16,17 +16,23 @@ class CreateAulasTable extends Migration
     Schema::create('aulas', function (Blueprint $table) {
         $table->id();
         $table->string('nombre');
-        $table->string('ubicacion');
-        $table->integer('capacidad');
+        $table->integer('capacidad')->nullable();
+        $table->integer('temperatura')->nullable(); // extras
+        $table->string('posicion_cortinas')->nullable();
+        $table->integer('stock_roto')->nullable();
+        $table->integer('mesas_disponibles')->nullable();
+        $table->integer('sillas_disponibles')->nullable();
+        $table->integer('intensidad_luz')->nullable();
+        $table->string('estado_proyector')->nullable();
         $table->timestamps();
-    });    
+    });
 }
 
 
     /**
      * Reverse the migrations.
      *
-     * @return void
+     * 
      */
     public function down()
     {

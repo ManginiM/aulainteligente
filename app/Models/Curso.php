@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Curso extends Model
 {   protected $fillable = ['nombre'];
 
-    // Un Curso tiene muchas Materias
-    public function materias()
+    // Un Curso tiene muchas materia
+    public function materia()
     {
-        return $this->hasMany(Materia::class);
+        return $this->hasMany(materia::class);
     }
     use HasFactory;
 }

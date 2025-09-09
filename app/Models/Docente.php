@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Docente extends Model
-{   public function materias()
+{   public function Materia()
     {
         return $this->hasMany(Materia::class);
     }
@@ -15,6 +15,12 @@ class Docente extends Model
     {
         return $this->hasMany(Reserva::class);
     }
-    
+
     use HasFactory;
+
+    protected $fillable = [
+        'nombre',
+        'especialidad',
+    ];
+
 }
